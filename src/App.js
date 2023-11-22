@@ -2,6 +2,7 @@
 // import { get } from "prompt";
 import "./App.css";
 import { useEffect, useState } from "react";
+import logo from "./logo.png";
 
 function App() {
   // return (
@@ -45,6 +46,7 @@ function App() {
   }
   return (
     <div>
+      <Logo />
       <h1>
         hello welcome to MYapp .<br />
         Get advice by clicking below button
@@ -59,6 +61,10 @@ function App() {
       <h2>you have read {count} advices by now.</h2>
     </div>
   );
+}
+
+function Logo() {
+  return <img className="logo" src={logo} alt="logo" />;
 }
 
 export default App;
