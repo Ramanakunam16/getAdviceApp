@@ -1,3 +1,6 @@
+* {
+  box-sizing: border-box;
+}
 .App {
   text-align: center;
 }
@@ -43,22 +46,31 @@ h4 {
   text-align: center;
   font-family: "Courier New", Courier, monospace;
 }
-h2 {
+h3 {
   /* margin-right: auto; */
+  font-family: "Courier New", Courier, monospace;
   text-align: center;
+  display: inline-block;
+  margin: 5% 20%;
+  padding: 10px;
+  border: 1px solid black;
 }
 
 button {
   width: max-content;
   padding: 10px;
-  margin: 5% 30%;
+  margin: 2% 30%;
+  margin-bottom: 0;
   background-color: antiquewhite;
   font-family: "Courier New", Courier, monospace;
   font-size: 18px;
 }
+button:hover {
+  cursor: pointer;
+}
 .advice {
   border: 1px solid rgb(74, 74, 172);
-  /* width: max-content; */
+
   background-color: aquamarine;
   display: inline-block;
   padding: 20px;
@@ -66,4 +78,22 @@ button {
 }
 .logo {
   margin: 0 25%;
+}
+.count {
+  font-family: "Courier New", Courier, monospace;
+  text-align: center;
+  /* display: inline-block; */
+  margin: 3% 30%;
+  padding: 10px;
+  border: 1px solid rgb(6, 209, 6);
+}
+
+.share {
+  margin-top: 20px;
+  display: inline-block;
+  margin-left: 30%;
+}
+.twitterIcon,
+.whatsappIcon {
+  margin-top: 10px;
 }

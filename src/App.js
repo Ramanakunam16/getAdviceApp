@@ -3,6 +3,12 @@
 import "./App.css";
 import { useEffect, useState } from "react";
 import logo from "./logo.png";
+import {
+  TwitterShareButton,
+  WhatsappShareButton,
+  WhatsappIcon,
+  TwitterIcon,
+} from "react-share";
 
 function App() {
   // return (
@@ -23,7 +29,20 @@ function App() {
   //     </header>
   //   </div>
   // );
-
+  function Welcome() {
+    return (
+      <>
+        {" "}
+        <h1>hello welcome to getAdvice app.</h1>
+        <p>
+          {" "}
+          Get random advices by clicking below button.
+          <br />
+          You can share an advice in <strong>twitter and whatsapp</strong>
+        </p>
+      </>
+    );
+  }
   const [advice, setAdvice] = useState("");
   const [count, setCount] = useState(0);
 
@@ -47,18 +66,29 @@ function App() {
   return (
     <div>
       <Logo />
-      <h1>
-        hello welcome to MYapp .<br />
-        Get advice by clicking below button
-      </h1>
+      <Welcome />
 
-      <h2>Your Advice:</h2>
+      <h3>Your Advice:</h3>
 
       <h4 className="advice">{advice}</h4>
 
+      <div className="share">
+        <h4> Share on:</h4>
+        <TwitterShareButton
+          url={advice + "#getAdvice"}
+          quote={"hello"}
+          hashtag="#getAdvice"
+        >
+          <TwitterIcon className="twitterIcon" size={30} round />
+        </TwitterShareButton>
+        <WhatsappShareButton url={advice}>
+          <WhatsappIcon className="whatsappIcon" size={30} round />
+        </WhatsappShareButton>
+      </div>
+
       <button onClick={getAdvice}>getAdvice</button>
 
-      <h2>you have read {count} advices by now.</h2>
+      <h3 className="count">you have read {count} advices by now.</h3>
     </div>
   );
 }
